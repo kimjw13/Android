@@ -33,19 +33,19 @@ public class MainActivity extends AppCompatActivity {
         btn2.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view){
-                btn2OnClick();
+                ThumbsUpOnClick();
             }
         });
         btn3.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view){
-                btn3Onclick();
+                ThumbsDownOnclick();
             }
         });
 
     }
 
-    public void btn2OnClick(){
+    public void ThumbsUpOnClick(){
         if(btnState1) {
             if (!btnState2) {
                 txt11.setText("33");
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         btnState1 = !btnState1;
     }
 
-    public void btn3Onclick(){
+    public void ThumbsDownOnclick(){
         if(btnState2){
             if(!btnState1){
                 txt10.setText("153");
