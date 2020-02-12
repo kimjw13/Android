@@ -33,29 +33,50 @@ public class MainActivity extends AppCompatActivity {
         btn2.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view){
-                if(btnState1){
-                    txt10.setText("154");
-                    btn2.setBackgroundResource(R.drawable.ic_thumb_up_selected);
-                }else{
-                    txt10.setText("153");
-                    btn2.setBackgroundResource(R.drawable.thumbs_up_selector);
-                }
-                btnState1=!btnState1;
+                btn2OnClick();
             }
         });
         btn3.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view){
-                if(btnState2){
-                    txt11.setText("33");
-                    btn3.setBackgroundResource(R.drawable.ic_thumb_down_selected);
-                }else{
-                    txt11.setText("32");
-                    btn3.setBackgroundResource(R.drawable.thumbs_down_selector);
-                }
-                btnState2=!btnState2;
+                btn3Onclick();
             }
         });
 
     }
+
+    public void btn2OnClick(){
+        if(btnState1) {
+            if (!btnState2) {
+                txt11.setText("33");
+                btn3.setBackgroundResource(R.drawable.thumbs_down_selector);
+                btnState2 = !btnState2;
+            }
+            txt10.setText("154");
+            btn2.setBackgroundResource(R.drawable.ic_thumb_up_selected);
+        }else{
+            txt10.setText("153");
+            btn2.setBackgroundResource(R.drawable.thumbs_up_selector);
+        }
+        btnState1 = !btnState1;
+    }
+
+    public void btn3Onclick(){
+        if(btnState2){
+            if(!btnState1){
+                txt10.setText("153");
+                btn2.setBackgroundResource(R.drawable.thumbs_up_selector);
+                btnState1 = !btnState1;
+            }
+            txt11.setText("32");
+            btn3.setBackgroundResource(R.drawable.ic_thumb_down_selected);
+        }else{
+            txt11.setText("33");
+            btn3.setBackgroundResource(R.drawable.thumbs_down_selector);
+
+        }
+        btnState2 = !btnState2;
+    }
+
+
 }
