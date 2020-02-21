@@ -122,7 +122,7 @@ public class MovieDetailFragment extends Fragment{
         allCommentList = rootView.findViewById(R.id.AllCommentList);
 
         requestSelectedMovieInformation();
-        requestCommentList();
+//        requestCommentList();
 
         writeCommentTextView.setOnClickListener(new View.OnClickListener(){
             @Override
