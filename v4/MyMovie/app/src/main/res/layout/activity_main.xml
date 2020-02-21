@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerVertical="false"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
 
 
@@ -145,7 +144,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:gravity="center"
-                        android:text="@string/m1_2" />
+                        android:text="18%" />
                 </LinearLayout>
 
                 <LinearLayout

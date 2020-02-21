@@ -31,18 +31,18 @@
     <string name="r">예매하기</string>
 
     <!--    ListView_Item_String-->
-    <string name="movieName">영화제목</string>
-    <string name="oneLine">한줄평</string>
+    <string name="mN">영화제목</string>
+    <string name="oL">한줄평</string>
 
 
 
-<!--    추가된 사항  -->
+<!--    추가된 사항 & Key 추가 -->
     <string name="commentList">commentList</string>
     <string name="recommendCnt">recommendCnt</string>
     <string name="movieComment">movieComment</string>
     <string name="title_activity_main2">Main2Activity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="drawerOpen">drawerOpen</string>
+    <string name="drawerClose">drawerClose</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
@@ -53,11 +53,18 @@
     <string name="menu_movie_book">예매하기</string>
     <string name="menu_settings">사용자 설정</string>
 
-    <string name="LOG">LOG_MESSAGE</string>
-    <string name="MOVIE_LIST">MOVIE_LIST</string>
-    <string name="MOVIE_HEADER">MOVIE_HEADER</string>
-    <string name="SELECTED_MOVIE_ID">SELECTED_MOVIE_ID</string>
-    <string name="SELECTED_MOVIE_TITLE">SELECTED_MOVIE_TITLE</string>
+    <string name="Log">logMessage</string>
+    <string name="movieList">movieList</string>
+    <string name="movieHeader">movieHeader</string>
+
+    <string name="movieID">movieID</string>
+    <string name="movieTitle">movieTitle</string>
+    <string name="movieGrade">movieGrade</string>
+
+    <string name="navigationActivity">navigationActivity</string>
+    <string name="movieFragment">movieFragment</string>
+    <string name="movieDetailFragment">movieDetailFragment</string>
+    <string name="commentListActivity">commentListActivity</string>
 
 
 </resources>

@@ -1,6 +1,7 @@
 package com.project.MyMovie.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -49,41 +50,13 @@ public class NavigationDrawerActivity extends AppCompatActivity implements Navig
 
     }
 
-    public void requestMovieList(){
-
-        movieListFragmentPager = new MovieListFragmentPager();
-
-        movieDetailFragment = new MovieDetailFragment();
-
-        String url = "http://" + AppHelper.host + ":" + AppHelper.port + "/movie/readMovieList";
-        url += "?" + "type=1";
-
-        StringRequest request = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        processResponse(response);
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                    }
-                }
-        );
-
-        request.setShouldCache(false);
-        AppHelper.requestQueue.add(request);
-
-    }
-
     public void init(){
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.drawerOpen, R.string.drawerClose);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
@@ -141,14 +114,44 @@ public class NavigationDrawerActivity extends AppCompatActivity implements Navig
         return true;
     }
 
-    public void onChangeFragment(int id, String title){
+    public void onChangeFragment(int id, String title, int grade){
         Bundle bundle = new Bundle();
-        bundle.putParcelable(getString(R.string.MOVIE_HEADER), new MovieInformation(id, title));
+        bundle.putParcelable(getString(R.string.movieHeader), new MovieInformation(id, title, grade));
         movieDetailFragment.setArguments(bundle);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, movieDetailFragment).commit();
     }
 
+    public void requestMovieList(){
 
+        movieListFragmentPager = new MovieListFragmentPager();
+        movieDetailFragment = new MovieDetailFragment();
+
+        String url = "http://" + AppHelper.host + ":" + AppHelper.port + "/movie/readMovieList";
+        url += "?" + "type=1";
+
+        StringRequest request = new StringRequest(
+                Request.Method.GET,
+                url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("MOVIELISTACTIVITY","STATE : SUCCESS / call onResponse()");
+                        processResponse(response);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("MOVIELISTACTIVITY",error.getMessage());
+                    }
+                }
+        );
+
+
+        request.setShouldCache(false);
+        AppHelper.requestQueue.add(request);
+
+    }
 
     public void processResponse(String response){
 
@@ -163,7 +166,8 @@ public class NavigationDrawerActivity extends AppCompatActivity implements Navig
             }
 
             Bundle bundle = new Bundle();
-            bundle.putParcelableArrayList(getString(R.string.MOVIE_LIST), movieInformationList);
+            bundle.putParcelableArrayList(getString(R.string.movieList), movieInformationList);
+            Log.e("movielist 확인", getString((R.string.movieList)));
             movieListFragmentPager.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.container, movieListFragmentPager).commit();
         }

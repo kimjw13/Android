@@ -38,10 +38,6 @@ public class ShowCommentList extends AppCompatActivity{
 
         lv = findViewById(R.id.CommentList);
 
-        final CommentAdapter adapter = new CommentAdapter();
-
-        lv.setAdapter(adapter);
-
         write = findViewById(R.id.write);
         write.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,40 +48,6 @@ public class ShowCommentList extends AppCompatActivity{
         });
     }
 
-    class CommentAdapter extends BaseAdapter {
 
-        ArrayList<CommentData> items = new ArrayList<>();
-
-        @Override
-        public int getCount() {
-            return items.size();
-        }
-
-        public void addItem(CommentData item){
-            items.add(item);
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return items.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View view, ViewGroup viewGroup) {
-            AllCommentList temp = new AllCommentList(getApplicationContext());
-
-            CommentData item = items.get(position);
-
-            temp.setName(item.getReview_id());
-            temp.setComment(item.getContents());
-
-            return temp;
-        }
-    }
 
 }

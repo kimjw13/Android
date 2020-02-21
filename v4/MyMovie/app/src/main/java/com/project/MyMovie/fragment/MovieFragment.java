@@ -2,6 +2,7 @@ package com.project.MyMovie.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,7 +55,7 @@ public class MovieFragment extends Fragment {
 
         movieNameTextView.setText(movieName);
         reservationRateTextView.setText(String.valueOf(reservation_rate) + " %");
-        gradeTextView.setText(grade);
+        gradeTextView.setText(String.valueOf(grade));
 
         detailButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -70,15 +71,20 @@ public class MovieFragment extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
+
+        activity = (NavigationDrawerActivity) getActivity();
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
+
+        activity = null;
     }
 
     public void detailButtonOnClick(){
-        activity.onChangeFragment(id, movieName);
+        activity.onChangeFragment(id, movieName, grade);
+        Log.e("detailbutton", "선택된 id:" + id + " 선택된 movieName:" + movieName + "선택된 grade" + grade);
     }
 
 

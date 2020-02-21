@@ -4,5 +4,5 @@ import java.util.ArrayList;
 
 public class MovieDetailList {
 
-    public ArrayList<MovieDetailData> Result = new ArrayList<>();
+    public ArrayList<MovieDetailData> result = new ArrayList<>();
 }

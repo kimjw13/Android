@@ -18,9 +18,25 @@ public class MovieInformation implements Parcelable {
     public String thumb;
     public String image;
 
-    public MovieInformation(int id, String title){
+    public MovieInformation(int id, String title, int grade){
         this.id = id;
         this.title = title;
+        this.grade = grade;
+    }
+
+    public MovieInformation(int id, String title, String title_eng, String date, float user_rating, float audience_rating, float reviewer_rating, float reservation_rate, int reservation_grade, int grade, String thumb, String image) {
+        this.id = id;
+        this.title = title;
+        this.title_eng = title_eng;
+        this.date = date;
+        this.user_rating = user_rating;
+        this.audience_rating = audience_rating;
+        this.reviewer_rating = reviewer_rating;
+        this.reservation_rate = reservation_rate;
+        this.reservation_grade = reservation_grade;
+        this.grade = grade;
+        this.thumb = thumb;
+        this.image = image;
     }
 
     public MovieInformation(Parcel src){

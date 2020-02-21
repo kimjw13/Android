@@ -2,6 +2,7 @@ package com.project.MyMovie.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,9 @@ public class MovieListFragmentPager extends Fragment {
         Bundle bundle = getArguments();
 
         if(bundle != null){
-            list = bundle.getParcelableArrayList(getString(R.string.MOVIE_LIST));
+            list = bundle.getParcelableArrayList(getString(R.string.movieList));
+        }else{
+            Log.e("bundle is null","Bundle is null");
         }
 
         ViewPager pager = rootView.findViewById(R.id.pager);
@@ -58,7 +61,6 @@ public class MovieListFragmentPager extends Fragment {
             adapter.addItem(fragment);
         }
         pager.setAdapter(adapter);
-
         return rootView;
     }
 

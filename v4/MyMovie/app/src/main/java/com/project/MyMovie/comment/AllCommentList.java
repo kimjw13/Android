@@ -3,7 +3,9 @@ package com.project.MyMovie.comment;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -12,8 +14,14 @@ import com.project.MyMovie.R;
 
 public class AllCommentList extends LinearLayout{
 
-    TextView txt_v1;
-    TextView txt_v2;
+    ImageView reviewUserImage;
+
+    TextView reviewUserId;
+    TextView reviewTime;
+    TextView reviewCommentText;
+    TextView reviewRecommendCount;
+
+    RatingBar reviewRatingBar;
 
     public AllCommentList(Context context) {
         super(context);
@@ -31,18 +39,29 @@ public class AllCommentList extends LinearLayout{
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.comment_item, this, true);
 
-        txt_v1 = findViewById(R.id.userid);
-        txt_v2 = findViewById(R.id.comment);
+        reviewUserImage = findViewById(R.id.reviewUserImage);
+        reviewUserId = findViewById(R.id.reviewUserId);
+        reviewTime = findViewById(R.id.reviewTime);
+        reviewCommentText = findViewById(R.id.reviewCommentText);
+        reviewRecommendCount = findViewById(R.id.reviewRecommendCount);
+        reviewRatingBar = findViewById(R.id.reviewRatingBar);
 
     }
-    public void setName(String name){
-        txt_v1.setText(name);
 
+    public void setReviewUserId(String name){
+        reviewUserId.setText(name);
     }
 
-    public void setComment(String comment){
-        txt_v2.setText(comment);
+    public void setReviewTime(String time){
+        reviewTime.setText(time);
+    }
 
+    public void setReviewCommentText(String comment){
+        reviewCommentText.setText(comment);
+    }
+
+    public void setRecommendCount(int recommendCnt){
+        reviewRecommendCount.setText(String.valueOf(recommendCnt));
     }
 
 }
