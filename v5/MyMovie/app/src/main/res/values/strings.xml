@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">씨네마천국</string>
+    <!--    m1 = movie_name1-->
+    <string name="m1">군도</string>
+    <string name="m1_date">2014.07.23 개봉</string>
+    <string name="m1_genre">액션</string>
+    <string name="m1_slash">/</string>
+    <string name="m1_duration">137분</string>
+    <string name="m1_1">예매율</string>
+    <string name="m1_2_1">위</string>
+    <string name="m1_2_2">%</string>
+    <string name="m1_3">평점</string>
+    <string name="m1_4">8.2</string>
+    <string name="m1_5">누적관객수</string>
+    <string name="m1_6">839,399</string>
+    <string name="m1_6_1">명</string>
+    <!--    줄거리-->
+    <string name="s1">줄거리</string>
+    <string name="s1_c">군도, 백성을 구하라\n양반과 탐관오리들의 착취가 극에 달했던 조선 철종 13년.\n힘 없는 백성의 편이 되어 세상을 바로잡고자 하는 의적떼인 군도(), 지리산 추설이 있었다.\n\n쌍칼 도치 vs 백성의 적 조윤\n잦은 자연재해, 기근과 관의 횡포까지 겹쳐 백성들의 삶이 날로 피폐해 져 가는 사이, 나주 대부호의 서자로 조선 최고의 무관 출신인 조윤은 극악한 수법으로 양민들을 수탈, 삼남지방 최고의 대부호로 성장한다. 한편 소, 돼지를 잡아 근근이 살아가던 천한 백정 돌무치는 죽어도 잊지 못할 끔찍한 일을 당한 뒤 군도에 합류, 지리산 추설의 신 거성() 도치로 거듭난다.\n\n뭉치면 백성, 흩어지면 도적!\n망할 세상을 뒤집기 위해, 백성이 주인인 새 세상을 향해 도치를 필두로 한 군도는 백성의 적, 조윤과 한 판 승부를 시작하는데...</string>
+    <!--    감독,출연  -->
+    <string name="d1">감독/출연</string>
+    <string name="d1_1">감독</string>
+    <string name="d1_2">윤종빈</string>
+    <string name="d1_3">출연</string>
+    <string name="d1_4">하정우(도치), 강동원(조윤)</string>
+    <!--    한줄평-->
+    <string name="l1">한줄평</string>
+    <string name="l1_1">작성하기</string>
+    <string name="l1_2">모두 보기</string>
+    <!--    예매하기-->
+    <string name="r">예매하기</string>
+
+    <!--    ListView_Item_String-->
+    <string name="mN">영화제목</string>
+    <string name="oL">한줄평</string>
+
+
+
+<!--    추가된 사항 & Key 추가 -->
+    <string name="commentList">commentList</string>
+    <string name="recommendCnt">recommendCnt</string>
+    <string name="movieComment">movieComment</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="drawerOpen">drawerOpen</string>
+    <string name="drawerClose">drawerClose</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">설정</string>
+
+    <string name="menu_movie_list">영화 목록</string>
+    <string name="menu_movie_api">영화 API</string>
+    <string name="menu_movie_book">예매하기</string>
+    <string name="menu_settings">사용자 설정</string>
+
+    <string name="Log">logMessage</string>
+    <string name="movieList">movieList</string>
+    <string name="movieHeader">movieHeader</string>
+
+    <string name="movieID">movieID</string>
+    <string name="movieTitle">movieTitle</string>
+    <string name="movieGrade">movieGrade</string>
+
+    <string name="navigationActivity">navigationActivity</string>
+    <string name="movieFragment">movieFragment</string>
+    <string name="movieDetailFragment">movieDetailFragment</string>
+    <string name="commentListActivity">commentListActivity</string>
+
+
+</resources>
