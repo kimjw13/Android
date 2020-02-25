@@ -64,4 +64,8 @@ public class AllCommentList extends LinearLayout{
         reviewRecommendCount.setText(String.valueOf(recommendCnt));
     }
 
+    public void setRating(float reviewRating){
+        reviewRatingBar.setRating(reviewRating);
+    }
+
 }

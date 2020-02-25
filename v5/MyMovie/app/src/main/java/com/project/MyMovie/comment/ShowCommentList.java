@@ -120,6 +120,7 @@ public class ShowCommentList extends AppCompatActivity{
             view.setReviewTime(item.getTime());
             view.setReviewCommentText(item.getContents());
             view.setRecommendCount(item.getRecommend());
+            view.setRating(item.getRating());
 
             return view;
         }
@@ -177,7 +178,8 @@ public class ShowCommentList extends AppCompatActivity{
         Intent clickIntent = new Intent(getApplicationContext(), CommentWrite.class);
         clickIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         clickIntent.putExtra(getString(R.string.movieGrade), grade);
-        clickIntent.putExtra(getString(R.string.movieID), movieNameText);
+        clickIntent.putExtra(getString(R.string.movieTitle), movieNameText);
+        clickIntent.putExtra(getString(R.string.movieID), id);
         startActivityForResult(clickIntent, successCode);
     }
 

@@ -3,7 +3,6 @@ package com.project.MyMovie.comment;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,8 +13,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -36,9 +33,12 @@ public class CommentWrite extends AppCompatActivity{
     Button save;
     Button cancel;
 
+    String movieName;
+    int movieId;
+
     @Override
-    public void onCreate(Bundle savedInstatnce){
-        super.onCreate(savedInstatnce);
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.write_comment);
 
         writeName = findViewById(R.id.writeName);
@@ -50,7 +50,8 @@ public class CommentWrite extends AppCompatActivity{
         cancel = findViewById(R.id.cancel);
 
         Intent passedIntent = getIntent();
-        String movieName = passedIntent.getStringExtra(getString(R.string.movieID));
+        movieName = passedIntent.getStringExtra(getString(R.string.movieTitle));
+        movieId = passedIntent.getIntExtra(getString(R.string.movieID),0);
         writeName.setText(movieName);
 
         int grade = passedIntent.getIntExtra(getString(R.string.movieGrade),0);
@@ -87,7 +88,7 @@ public class CommentWrite extends AppCompatActivity{
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        //Toast.makeText(WriteReviewActivity.this, response, Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(CommentWrite.this, response, Toast.LENGTH_SHORT).show();
                     }
                 },
                 new Response.ErrorListener() {
@@ -98,18 +99,21 @@ public class CommentWrite extends AppCompatActivity{
                 }
             ){
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                1111111111
-                return super.getParams();
+            protected Map<String, String> getParams(){
+                Map<String, String> params = new HashMap<>();
+                params.put("id", String.valueOf(movieId));
+                params.put("writer", "firePistol");
+                params.put("rating", String.valueOf(writeRatingBar.getRating()));
+                params.put("contents", input.getText().toString());
+
+                return params;
             }
         };
-
 
         request.setShouldCache(false);
         AppHelper.requestQueue.add(request);
         Intent returnIntent = new Intent();
         setResult(Activity.RESULT_OK, returnIntent);
-//        Log.e("cert",getString(Activity.RESULT_OK));
         finish();
     }
 

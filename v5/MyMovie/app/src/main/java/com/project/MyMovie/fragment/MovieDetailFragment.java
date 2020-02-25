@@ -225,6 +225,7 @@ public class MovieDetailFragment extends Fragment implements NavigationDrawerAct
         synopsis.setText(movieList.get(0).synopsis);
         director.setText(movieList.get(0).director);
         actor.setText(movieList.get(0).actor);
+
     }
 
     public void requestCommentList(){
@@ -304,6 +305,7 @@ public class MovieDetailFragment extends Fragment implements NavigationDrawerAct
             view.setReviewTime(item.getTime());
             view.setRecommendCount(item.getRecommend());
             view.setReviewCommentText(item.getContents());
+            view.setRating(item.getRating());
 
             return view;
         }
