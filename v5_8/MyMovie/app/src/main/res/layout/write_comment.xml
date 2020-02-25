@@ -49,7 +49,8 @@
             android:id="@+id/writeRatingBar"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:numStars="4"
+            android:isIndicator="false"
+            android:numStars="5"
             android:stepSize="0.5" />
 
         <TextView
@@ -69,15 +70,15 @@
 
         <EditText
             android:id="@+id/input"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="170dp"
             android:layout_weight="1"
             android:background="@drawable/orange_rect"
             android:ems="10"
             android:gravity="start|top"
             android:hint="100자 이내로 작성해 주세요."
-            android:padding="5dp"
-            android:privateImeOptions="defaultInputmode=korean" />
+            android:padding="5dp" />
+<!--            android:privateImeOptions="defaultInputmode=korean" -->
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
